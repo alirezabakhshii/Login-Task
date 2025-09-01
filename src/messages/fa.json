@@ -1,0 +1,16 @@
+{
+  "appTitle": "سامانه ورود",
+  "navLogin": "ورود",
+  "navDashboard": "داشبورد",
+  "navLogout": "خروج",
+  "navTheme": "تم",
+  "navLanguage": "زبان",
+  "loginPhoneLabel": "شماره موبایل",
+  "loginPlaceholder": "مثال: 09121234567",
+  "loginButton": "ورود",
+  "loginLoading": "در حال ورود...",
+  "loginErrorInvalid": "شماره موبایل معتبر نیست",
+  "loginErrorNetwork": "خطا در ارتباط با سرور",
+  "dashboardWelcome": "سلام، {name} 👋",
+  "dashboardEmail": "ایمیل: {email}"
+}

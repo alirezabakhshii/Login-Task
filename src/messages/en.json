@@ -1,0 +1,16 @@
+{
+  "appTitle": "Auth Demo",
+  "navLogin": "Login",
+  "navDashboard": "Dashboard",
+  "navLogout": "Logout",
+  "navTheme": "Theme",
+  "navLanguage": "Language",
+  "loginPhoneLabel": "Mobile number",
+  "loginPlaceholder": "e.g. 09121234567",
+  "loginButton": "Login",
+  "loginLoading": "Signing in...",
+  "loginErrorInvalid": "Invalid Iranian mobile number",
+  "loginErrorNetwork": "Network error",
+  "dashboardWelcome": "Hi, {name} 👋",
+  "dashboardEmail": "Email: {email}"
+}

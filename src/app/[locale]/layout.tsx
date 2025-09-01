@@ -3,7 +3,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getDirection, type Locale } from "@/i18next";
 import { notFound } from "next/navigation";
 import { cn } from "@/lib/utils";
-import "./globals.css"; // از /src/app/globals.css به این فایل ایمپورت میشه
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Auth Task",
@@ -19,7 +19,7 @@ async function getMessages(locale: Locale) {
     const messages = (await import(`@/messages/${locale}.json`)).default;
     return messages;
   } catch {
-    // notFound();
+    notFound();
   }
 }
 
@@ -28,17 +28,20 @@ export default async function LocaleLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: { locale: Locale };
+  params: Promise<{ locale: Locale }>;
 }) {
-  const direction = getDirection(params.locale);
-  const messages = await getMessages(params.locale);
+  const { locale } = await params;
+  const direction = getDirection(locale);
+  const messages = await getMessages(locale);
 
-  console.log(messages, "messages are heare");
+  if (!messages) {
+    notFound();
+  }
 
   return (
-    <html lang={params.locale} dir={direction} suppressHydrationWarning>
+    <html lang={locale} dir={direction} suppressHydrationWarning>
       <body className="min-h-screen">
-        <NextIntlClientProvider locale={params.locale} messages={messages}>
+        <NextIntlClientProvider locale={locale} messages={messages}>
           <main>{children}</main>
         </NextIntlClientProvider>
       </body>

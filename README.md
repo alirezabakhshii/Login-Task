@@ -13,7 +13,7 @@
 
 ---
 
-## ✨ ویژگی‌های جدید
+## ✨ ویژگی‌ها
 
 ### 📱 **Responsive Design**
 - **Mobile-First Approach** - بهینه‌سازی شده برای موبایل
@@ -226,49 +226,3 @@ vercel --prod
 - **Readable Text** - فونت‌های قابل خواندن
 - **Smooth Animations** - انیمیشن‌های نرم
 
----
-
-## 🔮 آینده
-
-### **Planned Features**
-- [x] **Responsive Design** ✅
-- [x] **Smart Redirect System** ✅
-- [x] **Enhanced UI/UX** ✅
-- [ ] **Real API Integration** - اتصال به API واقعی
-- [ ] **Role-based Auth** - سیستم نقش‌محور
-- [ ] **Push Notifications** - اعلان‌های push
-- [ ] **Offline Support** - پشتیبانی آفلاین
-
-### **Enhancements**
-- [ ] **Dark/Light Theme Toggle** - تغییر تم
-- [ ] **Advanced Animations** - انیمیشن‌های پیشرفته
-- [ ] **Progressive Web App** - PWA features
-
----
-
-## 🤝 مشارکت
-
-1. **Fork** کنید
-2. **Feature Branch** ایجاد کنید (`git checkout -b feature/AmazingFeature`)
-3. **Commit** کنید (`git commit -m 'Add some AmazingFeature'`)
-4. **Push** کنید (`git push origin feature/AmazingFeature`)
-5. **Pull Request** ایجاد کنید
-
----
-
-## 📄 لایسنس
-
-این پروژه تحت لایسنس **MIT** منتشر شده است.
-
----
-
-## 📞 تماس
-
-- **GitHub**: [@your-username](https://github.com/your-username)
-- **Email**: your-email@example.com
-
----
-
-👉 **پروژه آماده‌ی توسعه و استقرار است!** 🚀
-
-**Features**: 📱 Responsive | 🌍 Multi-language | 🔑 Auth | 🎨 Modern UI | 🚀 Smart Redirect

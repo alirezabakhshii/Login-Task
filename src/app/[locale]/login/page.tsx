@@ -35,10 +35,8 @@ export default function LoginPage(props: Props) {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // Ensure locale is always defined
   const currentLocale = locale || "fa";
 
-  // Check if user already exists and redirect to dashboard
   useEffect(() => {
     const user = getItem<TUser>("user");
     if (user) {
@@ -72,13 +70,11 @@ export default function LoginPage(props: Props) {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 relative overflow-hidden">
-      {/* Subtle background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-20 -right-20 sm:-top-40 sm:-right-40 w-40 h-40 sm:w-80 sm:h-80 bg-slate-800/30 rounded-full blur-3xl"></div>
         <div className="absolute -bottom-20 -left-20 sm:-bottom-40 sm:-left-40 w-40 h-40 sm:w-80 sm:h-80 bg-slate-800/30 rounded-full blur-3xl"></div>
       </div>
 
-      {/* Responsive Header */}
       <div className="fixed top-0 z-50 left-0 w-full flex items-center justify-between p-3 sm:p-6 z-10">
         <div className="flex items-center space-x-2 sm:space-x-3">
           <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-slate-700 to-slate-600 rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg">
@@ -93,7 +89,6 @@ export default function LoginPage(props: Props) {
         </div>
       </div>
 
-      {/* Main Content - Responsive */}
       <div className="min-h-screen flex items-center justify-center p-3 sm:p-6 pt-20 sm:pt-24 relative z-10">
         <div className="w-full max-w-sm sm:max-w-md">
           <Card className="bg-slate-800/50 border border-slate-700 shadow-2xl">

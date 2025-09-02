@@ -22,7 +22,7 @@ import { use } from "react";
 
 export type Props = {
   params: Promise<{
-    locale: "en" | "fa";
+    locale: string;
   }>;
 };
 
@@ -63,7 +63,7 @@ export default function LoginPage(props: Props) {
         avatar: u.picture.thumbnail,
       });
       router.push(`/${currentLocale}/dashboard`);
-    } catch (e) {
+    } catch {
       setError(t("loginErrorNetwork"));
     } finally {
       setLoading(false);

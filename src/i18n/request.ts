@@ -1,9 +1,12 @@
 import { getRequestConfig } from "next-intl/server";
-import { locales, defaultLocale } from "@/i18next";
 
 export default getRequestConfig(async ({ locale }) => {
   // Validate that the incoming `locale` parameter is valid
-  if (!locales.includes(locale as any)) {
+  const validLocales = ["fa", "en"];
+  const defaultLocale = "fa";
+  
+  // Ensure locale is always defined
+  if (!locale || !validLocales.includes(locale)) {
     locale = defaultLocale;
   }
 

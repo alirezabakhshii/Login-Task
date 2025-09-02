@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
-import { getDirection, type Locale } from "@/i18next";
+import { getDirection } from "@/i18next";
 import { notFound } from "next/navigation";
-import { cn } from "@/lib/utils";
-import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Auth Task",
@@ -14,12 +12,14 @@ export function generateStaticParams() {
   return [{ locale: "fa" }, { locale: "en" }];
 }
 
-async function getMessages(locale: Locale) {
+async function getMessages(locale: string) {
   try {
     const messages = (await import(`@/messages/${locale}.json`)).default;
     return messages;
-  } catch {
-    notFound();
+  } catch (error) {
+    console.error(`Failed to load messages for locale: ${locale}`, error);
+    // Return null instead of calling notFound() to avoid server errors
+    return null;
   }
 }
 
@@ -28,10 +28,10 @@ export default async function LocaleLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: Promise<{ locale: Locale }>;
+  params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const direction = getDirection(locale);
+  const direction = getDirection(locale as "fa" | "en");
   const messages = await getMessages(locale);
 
   if (!messages) {
@@ -39,8 +39,8 @@ export default async function LocaleLayout({
   }
 
   return (
-    <html lang={locale} dir={direction} suppressHydrationWarning>
-      <body className="min-h-screen">
+    <html lang={locale} dir={direction}>
+      <body>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <main>{children}</main>
         </NextIntlClientProvider>

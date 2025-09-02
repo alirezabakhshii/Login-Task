@@ -7,7 +7,7 @@ import type { TUser } from "@/types/user";
 import { use } from "react";
 
 export type Props = {
-  params: Promise<{ locale: "fa" | "en" }>;
+  params: Promise<{ locale: string }>;
 };
 
 export default function HomePage(props: Props) {

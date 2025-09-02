@@ -6,19 +6,19 @@ import { useTranslations } from "next-intl";
 import { getItem, removeItem } from "@/lib/storageHelper";
 import {
   Card,
-  CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { LocaleSwitcher } from "@/components/Language/LanguageChanger";
-import { LogOut, User, Mail, Smartphone } from "lucide-react";
+import { LogOut, Mail, Smartphone } from "lucide-react";
 import type { TUser } from "@/types/user";
 import { use } from "react";
+import Image from "next/image";
 
 export type Props = {
-  params: Promise<{ locale: "fa" | "en" }>;
+  params: Promise<{ locale: string }>;
 };
 
 export default function Dashboard(props: Props) {
@@ -96,11 +96,13 @@ export default function Dashboard(props: Props) {
           <Card className="bg-slate-800/50 border border-slate-700 shadow-2xl">
             <CardHeader className="text-center pb-6 sm:pb-8 px-4 sm:px-6">
               <div className="relative mx-auto mb-4 sm:mb-6">
-                <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full overflow-hidden ring-2 sm:ring-4 ring-slate-600 bg-gradient-to-br from-slate-700 to-slate-600 p-1 shadow-xl">
-                  <img
+                <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full overflow-hidden ring-2 sm:ring-4 ring-slate-600 bg-gradient-to-br from-slate-700 to-slate-600 p-1 shadow-xl relative">
+                  <Image
                     src={user.avatar}
                     alt={user.name}
-                    className="w-full h-full object-cover rounded-full"
+                    fill
+                    className="object-cover rounded-full"
+                    sizes="(max-width: 640px) 80px, (max-width: 768px) 96px, 112px"
                   />
                 </div>
                 <div className="absolute -top-1 -right-1 sm:-top-2 sm:-right-2 w-6 h-6 sm:w-8 sm:h-8 bg-green-500 rounded-full border-2 sm:border-4 border-slate-800 flex items-center justify-center shadow-lg">
